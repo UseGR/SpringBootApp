@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: Tony
               - column:
                   name: age
@@ -19,7 +19,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: William
               - column:
                   name: age
@@ -31,7 +31,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: Jack
               - column:
                   name: age
@@ -43,7 +43,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: Piter
               - column:
                   name: age
@@ -55,7 +55,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: Mary_Jane
               - column:
                   name: age
@@ -67,7 +67,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: Eddie
               - column:
                   name: age
@@ -79,7 +79,7 @@ databaseChangeLog:
             tableName: person
             columns:
               - column:
-                  name: name
+                  name: person_name
                   value: Sauron
               - column:
                   name: age

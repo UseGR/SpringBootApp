@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.galeev.springcourse.dto.PersonDTO;
 import ru.galeev.springcourse.models.Person;
 import ru.galeev.springcourse.repositories.PeopleRepository;
 
@@ -32,6 +33,12 @@ public class PeopleService {
         return foundPerson;
     }
 
+    public Optional<Person> findPersonByBookId(int id) {
+        Optional<Person> foundPerson = peopleRepository.findByBookId(id);
+        log.info("Method findPersonByBookId is returning person with book id = {}", id);
+        return foundPerson;
+    }
+
     @Transactional
     public void save(Person person) {
         peopleRepository.save(person);
@@ -52,7 +59,7 @@ public class PeopleService {
     }
 
     public boolean exists(int id) {
-        log.info("method exists is checking person with id = {}...", id);
+        log.info("Method exists is checking person with id = {}...", id);
         return peopleRepository.existsById(id);
     }
 }

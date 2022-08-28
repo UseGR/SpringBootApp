@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.galeev.springcourse.dto.BookDTO;
+import ru.galeev.springcourse.dto.PersonDTO;
 import ru.galeev.springcourse.models.Book;
 import ru.galeev.springcourse.services.BooksService;
 import ru.galeev.springcourse.services.PeopleService;
@@ -47,6 +48,13 @@ public class BookController {
         log.info("Getting book by id = {}: {}", id, bookDTO);
         return new ResponseEntity<>(bookDTO, HttpStatus.OK);
     }
+
+//    @GetMapping("people/books/{id}")
+//    public ResponseEntity<List<PersonDTO>> getPersonByBookId(@PathVariable(value = "id") int id) {
+//        List<PersonDTO> people = bookService.findPersonByBookId(id).stream().map(Convert::convertToPersonDTO).collect(Collectors.toList());
+//        log.info("Getting person by book id = {}: {}", id, people);
+//        return new ResponseEntity<>(people, HttpStatus.OK);
+//    }
 
     @GetMapping("/books_range")
     public ResponseEntity<List<BookDTO>> getBooksInRange(@RequestParam @DateTimeFormat(pattern = "yyyy") Calendar from, @RequestParam @DateTimeFormat(pattern = "yyyy") Calendar to) {

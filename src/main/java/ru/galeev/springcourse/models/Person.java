@@ -22,7 +22,7 @@ public class Person {
     private int id;
 
     @NotEmpty(message = "Name should not be empty")
-    @Column(name = "name")
+    @Column(name = "person_name")
     private String name;
 
     @Min(value = 0, message = "Age should be greater than 0")

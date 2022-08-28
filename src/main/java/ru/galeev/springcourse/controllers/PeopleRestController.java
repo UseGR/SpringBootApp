@@ -39,6 +39,12 @@ public class PeopleRestController {
         return Convert.convertToPersonDTO(peopleService.findOne(id).orElseThrow(() -> new PersonNotFoundException("Person with id = " + id + " wasn't found!")));
     }
 
+    @GetMapping("/getPersonByBookId/{id}")
+    public PersonDTO getPersonByBookId(@PathVariable("id") int id) {
+        log.warn("Getting person by book with id = {}", id);
+        return Convert.convertToPersonDTO(peopleService.findPersonByBookId(id).orElseThrow(() -> new BookNotFoundException("Book with id = " + id + " wasn't found!")));
+    }
+
     @PostMapping
     public ResponseEntity<HttpStatus> create(@RequestBody @Valid PersonDTO personDTO, BindingResult bindingResult) {
         ExceptionsHandler.handler(bindingResult);

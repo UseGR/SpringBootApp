@@ -29,7 +29,7 @@ public class Book {
     @JsonIgnore
     private Person person;
 
-    @Column(name = "name")
+    @Column(name = "book_name")
     private String name;
 
     @Column(name="created")

@@ -10,7 +10,7 @@ databaseChangeLog:
                   name: person_id
                   value: 1
               - column:
-                  name: name
+                  name: book_name
                   value: Quantum mechanics
               - column:
                   name: created
@@ -22,7 +22,7 @@ databaseChangeLog:
                   name: person_id
                   value: 1
               - column:
-                  name: name
+                  name: book_name
                   value: Metal alloys
               - column:
                   name: created
@@ -34,7 +34,7 @@ databaseChangeLog:
                   name: person_id
                   value: 2
               - column:
-                  name: name
+                  name: book_name
                   value: Treasure island
               - column:
                   name: created
@@ -46,7 +46,7 @@ databaseChangeLog:
                   name: person_id
                   value: 2
               - column:
-                  name: name
+                  name: book_name
                   value: Pirate
               - column:
                   name: created
@@ -58,7 +58,7 @@ databaseChangeLog:
                   name: person_id
                   value: 2
               - column:
-                  name: name
+                  name: book_name
                   value: The life and pirate adventures of the Glorious captain Singleton
               - column:
                   name: created
@@ -70,7 +70,7 @@ databaseChangeLog:
                   name: person_id
                   value: 3
               - column:
-                  name: name
+                  name: book_name
                   value: Red corsair
               - column:
                   name: created
@@ -82,7 +82,7 @@ databaseChangeLog:
                   name: person_id
                   value: 4
               - column:
-                  name: name
+                  name: book_name
                   value: Biology for high school
               - column:
                   name: created
@@ -94,7 +94,7 @@ databaseChangeLog:
                   name: person_id
                   value: 4
               - column:
-                  name: name
+                  name: book_name
                   value: World of spiders. Tower. Delta
               - column:
                   name: created
@@ -106,7 +106,7 @@ databaseChangeLog:
                   name: person_id
                   value: 4
               - column:
-                  name: name
+                  name: book_name
                   value: Marvel comics. Avengers
               - column:
                   name: created
@@ -118,7 +118,7 @@ databaseChangeLog:
                   name: person_id
                   value: 4
               - column:
-                  name: name
+                  name: book_name
                   value: How to be a hero
               - column:
                   name: created
@@ -130,7 +130,7 @@ databaseChangeLog:
                   name: person_id
                   value: 5
               - column:
-                  name: name
+                  name: book_name
                   value: Want to sing? Sing!
               - column:
                   name: created
@@ -142,7 +142,7 @@ databaseChangeLog:
                   name: person_id
                   value: 5
               - column:
-                  name: name
+                  name: book_name
                   value: Restaurant menu
               - column:
                   name: created
@@ -154,7 +154,7 @@ databaseChangeLog:
                   name: person_id
                   value: 5
               - column:
-                  name: name
+                  name: book_name
                   value: Math for high school
               - column:
                   name: created
@@ -166,7 +166,7 @@ databaseChangeLog:
                   name: person_id
                   value: 6
               - column:
-                  name: name
+                  name: book_name
                   value: The art of reporter
               - column:
                   name: created
@@ -178,7 +178,7 @@ databaseChangeLog:
                   name: person_id
                   value: 6
               - column:
-                  name: name
+                  name: book_name
                   value: Bodybuilding. Training in gym
               - column:
                   name: created
@@ -190,7 +190,7 @@ databaseChangeLog:
                   name: person_id
                   value: 6
               - column:
-                  name: name
+                  name: book_name
                   value: How not to eat everything everywhere. Manual for simbiots
               - column:
                   name: created
@@ -202,7 +202,7 @@ databaseChangeLog:
                   name: person_id
                   value: 7
               - column:
-                  name: name
+                  name: book_name
                   value: Dark sorcery
               - column:
                   name: created
@@ -214,7 +214,7 @@ databaseChangeLog:
                   name: person_id
                   value: 7
               - column:
-                  name: name
+                  name: book_name
                   value: The history of high elves
               - column:
                   name: created
@@ -226,7 +226,7 @@ databaseChangeLog:
                   name: person_id
                   value: 7
               - column:
-                  name: name
+                  name: book_name
                   value: Middle earth conquest
               - column:
                   name: created
@@ -238,7 +238,7 @@ databaseChangeLog:
                   name: person_id
                   value: 7
               - column:
-                  name: name
+                  name: book_name
                   value: Rings of power
               - column:
                   name: created

@@ -4,7 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.galeev.springcourse.models.Book;
+import ru.galeev.springcourse.models.Person;
 import ru.galeev.springcourse.repositories.BooksRepository;
+import ru.galeev.springcourse.util.Convert;
+import ru.galeev.springcourse.util.PersonNotFoundException;
 
 import java.util.Calendar;
 import java.util.List;
@@ -52,4 +55,5 @@ public class BooksService {
         log.info("Method deleteById is deleting book with id = {}...", id);
         bookRepository.deleteById(id);
     }
+
 }
