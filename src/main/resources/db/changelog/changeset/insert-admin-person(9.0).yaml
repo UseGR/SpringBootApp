@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: galeev
+      changes:
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: username
+                  value: rus
+              - column:
+                  name: first_name
+                  value: Rustem
+              - column:
+                  name: last_name
+                  value: Galeev
+              - column:
+                  name: age
+                  value: 28
+              - column:
+                  name: email
+                  value: rus@mail.ru
+              - column:
+                  name: password
+                  value: $2a$04$365YvGJLyqCkns7clmTEROF5ZAfiJI8N4I7srr/I/sAPeq8JPiHNq
+              - column:
+                  name: created
+                  value: NOW()
+              - column:
+                  name: updated
+                  value: NOW()
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: person_roles
+            columns:
+              - column:
+                  name: person_id
+                  value: 8
+              - column:
+                  name: role_id
+                  value: 1
+        - insert:
+            tableName: person_roles
+            columns:
+              - column:
+                  name: person_id
+                  value: 8
+              - column:
+                  name: role_id
+                  value: 2
+

@@ -3,47 +3,41 @@ package ru.galeev.springcourse.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Calendar;
+import java.util.Date;
 
 @Entity
-@Table(name="Book")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
-public class Book {
+@Table(name = "books")
+@Data
+public class Book extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "book_id")
-    private int id;
+    private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "person_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id", referencedColumnName = "person_id")
     @JsonIgnore
     private Person person;
 
-    @Column(name = "book_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="created")
+    @Column(name = "book_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Calendar created;
+    private Date bookDate;
 
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", person=" + person.getName() +
+                ", person=" + person.getFirstName() +
                 ", name='" + name + '\'' +
-                ", created=" + created.get(Calendar.YEAR) +
+                ", created=" + (bookDate.getYear() + 1900) +
                 '}';
     }
 }

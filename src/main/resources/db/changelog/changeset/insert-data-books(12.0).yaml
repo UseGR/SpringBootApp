@@ -1,245 +1,257 @@
 databaseChangeLog:
   - changeSet:
-      id: 4
+      id: 12
       author: galeev
       changes:
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 1
               - column:
-                  name: book_name
+                  name: name
                   value: Quantum mechanics
               - column:
-                  name: created
+                  name: book_date
                   value: 1948-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 1
               - column:
-                  name: book_name
+                  name: name
                   value: Metal alloys
               - column:
-                  name: created
+                  name: book_date
                   value: 1952-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 2
               - column:
-                  name: book_name
+                  name: name
                   value: Treasure island
               - column:
-                  name: created
+                  name: book_date
                   value: 1883-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 2
               - column:
-                  name: book_name
+                  name: name
                   value: Pirate
               - column:
-                  name: created
+                  name: book_date
                   value: 1822-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 2
               - column:
-                  name: book_name
+                  name: name
                   value: The life and pirate adventures of the Glorious captain Singleton
               - column:
-                  name: created
+                  name: book_date
                   value: 1720-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 3
               - column:
-                  name: book_name
+                  name: name
                   value: Red corsair
               - column:
-                  name: created
+                  name: book_date
                   value: 1827-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 4
               - column:
-                  name: book_name
+                  name: name
                   value: Biology for high school
               - column:
-                  name: created
+                  name: book_date
                   value: 2001-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 4
               - column:
-                  name: book_name
+                  name: name
                   value: World of spiders. Tower. Delta
               - column:
-                  name: created
+                  name: book_date
                   value: 2011-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 4
               - column:
-                  name: book_name
+                  name: name
                   value: Marvel comics. Avengers
               - column:
-                  name: created
+                  name: book_date
                   value: 1985-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 4
               - column:
-                  name: book_name
+                  name: name
                   value: How to be a hero
               - column:
-                  name: created
+                  name: book_date
                   value: 1994-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 5
               - column:
-                  name: book_name
+                  name: name
                   value: Want to sing? Sing!
               - column:
-                  name: created
+                  name: book_date
                   value: 1983-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 5
               - column:
-                  name: book_name
+                  name: name
                   value: Restaurant menu
               - column:
-                  name: created
+                  name: book_date
                   value: 2018-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 5
               - column:
-                  name: book_name
+                  name: name
                   value: Math for high school
               - column:
-                  name: created
+                  name: book_date
                   value: 2015-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 6
               - column:
-                  name: book_name
+                  name: name
                   value: The art of reporter
               - column:
-                  name: created
+                  name: book_date
                   value: 1992-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 6
               - column:
-                  name: book_name
+                  name: name
                   value: Bodybuilding. Training in gym
               - column:
-                  name: created
+                  name: book_date
                   value: 1989-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 6
               - column:
-                  name: book_name
+                  name: name
                   value: How not to eat everything everywhere. Manual for simbiots
               - column:
-                  name: created
+                  name: book_date
                   value: 2018-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 7
               - column:
-                  name: book_name
+                  name: name
                   value: Dark sorcery
               - column:
-                  name: created
+                  name: book_date
                   value: 3025-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 7
               - column:
-                  name: book_name
+                  name: name
                   value: The history of high elves
               - column:
-                  name: created
+                  name: book_date
                   value: 2054-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 7
               - column:
-                  name: book_name
+                  name: name
                   value: Middle earth conquest
               - column:
-                  name: created
+                  name: book_date
                   value: 3049-01-02
         - insert:
-            tableName: book
+            tableName: books
             columns:
               - column:
                   name: person_id
                   value: 7
               - column:
-                  name: book_name
+                  name: name
                   value: Rings of power
               - column:
-                  name: created
+                  name: book_date
                   value: 3033-01-02
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: person_id
+                  value: 8
+              - column:
+                  name: name
+                  value: Learning Java
+              - column:
+                  name: book_date
+                  value: 2019-01-02

@@ -1,9 +1,26 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changeset/create-person-table.yaml
+      file: db/changelog/changeset/create-people-table(1.0).yaml
   - include:
-      file: db/changelog/changeset/create-book-table.yaml
+      file: db/changelog/changeset/create-books-table(2.0).yaml
   - include:
-      file: db/changelog/changeset/insert-data-person.yaml
+      file: db/changelog/changeset/create-role-table(3.0).yaml
   - include:
-      file: db/changelog/changeset/insert-data-book.yaml
+      file: db/changelog/changeset/create-person_role-table(4.0).yaml
+  - include:
+      file: db/changelog/changeset/addForeignKeyConstraintsPerson_id(5.0).yaml
+  - include:
+      file: db/changelog/changeset/addForeignKeyConstraintsRole_id(6.0).yaml
+  - include:
+      file: db/changelog/changeset/insert-data-people(7.0).yaml
+  - include:
+      file: db/changelog/changeset/insert-data-role(8.0).yaml
+  - include:
+      file: db/changelog/changeset/insert-admin-person(9.0).yaml
+  - include:
+      file: db/changelog/changeset/insert-users-person(10.0).yaml
+  - include:
+      file: db/changelog/changeset/addForeignKeyConstraintsPerson_idBooks(11.0).yaml
+  - include:
+      file: db/changelog/changeset/insert-data-books(12.0).yaml
+

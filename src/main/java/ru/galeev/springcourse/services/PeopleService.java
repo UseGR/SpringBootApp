@@ -2,12 +2,17 @@ package ru.galeev.springcourse.services;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.galeev.springcourse.dto.PersonDTO;
 import ru.galeev.springcourse.models.Person;
+import ru.galeev.springcourse.models.Role;
+import ru.galeev.springcourse.models.Status;
 import ru.galeev.springcourse.repositories.PeopleRepository;
+import ru.galeev.springcourse.repositories.RoleRepository;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,10 +21,14 @@ import java.util.Optional;
 @Slf4j
 public class PeopleService {
     private final PeopleRepository peopleRepository;
+    private final RoleRepository roleRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
-    public PeopleService(PeopleRepository peopleRepository) {
+    public PeopleService(PeopleRepository peopleRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
         this.peopleRepository = peopleRepository;
+        this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<Person> findAll() {
@@ -27,39 +36,59 @@ public class PeopleService {
         return peopleRepository.findAll();
     }
 
-    public Optional<Person> findOne(int id) {
+    public Optional<Person> findOne(long id) {
         Optional<Person> foundPerson = peopleRepository.findById(id);
         log.info("Method findOne is returning person with id = {}...", id);
         return foundPerson;
     }
 
-    public Optional<Person> findPersonByBookId(int id) {
+    public Optional<Person> findPersonByBookId(long id) {
         Optional<Person> foundPerson = peopleRepository.findByBookId(id);
         log.info("Method findPersonByBookId is returning person with book id = {}", id);
         return foundPerson;
     }
 
-    @Transactional
-    public void save(Person person) {
-        peopleRepository.save(person);
-        log.info("Method save is keeping person {}...", person);
-    }
 
     @Transactional
-    public void update(int id, Person updatedPerson) {
-        updatedPerson.setId(id);
-        peopleRepository.save(updatedPerson);
-        log.info("Method update is updating person {} with id = {}...", updatedPerson, id);
-    }
-
-    @Transactional
-    public void delete(int id) {
+    public void delete(long id) {
         peopleRepository.deleteById(id);
         log.info("Method delete is removing person with id = {}...", id);
     }
+    @Transactional
+    public void deleteAll() {
+        peopleRepository.deleteAll();
+        log.info("Method deleteAll is removing people...");
+    }
 
-    public boolean exists(int id) {
+    public boolean exists(long id) {
         log.info("Method exists is checking person with id = {}...", id);
         return peopleRepository.existsById(id);
     }
+
+    @Transactional
+    public Person register(Person user) {
+        Role roleUser = roleRepository.findByName("ROLE_USER");
+        List<Role> userRoles = new ArrayList<>();
+        userRoles.add(roleUser);
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRoles(userRoles);
+        user.setStatus(Status.ACTIVE);
+        user.setCreated(new Date());
+        user.setUpdated(new Date());
+
+        Person registeredUser = peopleRepository.save(user);
+
+        log.info("IN register - user: {} successfully registered", registeredUser);
+
+        return registeredUser;
+    }
+
+    public Optional<Person> findByUsername(String username) {
+        Optional<Person> result = peopleRepository.findByUsername(username);
+        log.info("IN findByUsername - user: {} found by username: {}", result, username);
+        return result;
+    }
+
+
 }

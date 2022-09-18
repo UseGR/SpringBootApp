@@ -1,23 +1,25 @@
 package ru.galeev.springcourse.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.galeev.springcourse.models.Book;
-import ru.galeev.springcourse.models.Person;
 
 import javax.transaction.Transactional;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface BooksRepository extends JpaRepository<Book, Integer> {
-    List<Book> findByPersonId(int personId);
+public interface BooksRepository extends JpaRepository<Book, Long> {
+    List<Book> findByPersonId(long personId);
 
     @Transactional
-    void deleteByPersonId(int personId);
+    void deleteByPersonId(long personId);
 
-    List<Book> findBooksByCreatedBetween(Calendar from, Calendar to);
+    @Query(value = "SELECT * FROM books where book_date between ? and ? and person_id = ?", nativeQuery = true)
+    List<Book> findBooksByCreatedBetween(Date from, Date to, long id);
 
+    @Query(value = "SELECT * FROM books where book_date between ? and ?", nativeQuery = true)
+    List<Book> findBooksByCreatedBetween(Date from, Date to);
 
 }
